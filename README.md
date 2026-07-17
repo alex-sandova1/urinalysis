@@ -22,7 +22,8 @@ The goal is to demonstrate how data science techniques can support quality-focus
 
 ## Project Structure
 
-- `Main.py`: Launches the dashboard UI
+- `Main.py`: Lightweight application entrypoint that starts the dashboard
+- `dashboard_gui.py`: Dashboard GUI module (Tkinter UI, filtering, charts, export)
 - `Analysis.py`: Query runner and data quality helpers (`blank_entries`, `duplicates`)
 - `Test.py`: Example analysis script that executes all labeled queries
 - `Queries.sql`: Named SQL query blocks
@@ -91,7 +92,7 @@ The dataset includes chemistry and microscopy measurements including:
 
 ## Features
 
-### Dashboard (`Main.py`)
+### Dashboard (`dashboard_gui.py`)
 
 - Computes `Overall Status` (Normal/Abnormal) from urinalysis thresholds and categorical rules
 - Filter by diagnosis (`All results`, `NEGATIVE`, `POSITIVE`)
@@ -154,11 +155,3 @@ The analysis identifies relationships between laboratory parameters and abnormal
 
 - The abnormal status logic in the dashboard follows thresholds documented in `DATA_QUALITY_NOTES.md`.
 - Sample IDs displayed in the UI are derived from `ID` as `SMP-` plus zero-padded numeric value.
-
-## Future Improvements
-
-- Develop classification models to predict abnormal laboratory patterns
-- Evaluate feature importance of urinalysis parameters
-- Perform statistical analysis between patient groups
-- Add interactive filtering with additional visualization libraries
-- Generate automated laboratory quality reports
